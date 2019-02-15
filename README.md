@@ -17,24 +17,24 @@ FPM is exposed on Port 9000.
 For production use, without XDebug:
 
 ```
-docker run -d -p 8080:8080 -it --name=php -v $(pwd)/var/www/html:/var/www/html vesica/php73-fpm:latest
+docker run -d -p 9000:9000 -it --name=php vesica/php73-fpm:latest
 ```
 
 or with XDebug:
 ```
-docker run -d -p 8080:8080 -it --name=php -v $(pwd)/var/www/html:/var/www/html vesica/php73-fpm:dev
+docker run -d -p 9000:9000 -it --name=php vesica/php73-fpm:dev
 ```
 
 ## Build to use as a development environment (i.e., with XDebug):
 ```
 docker build -f Dockerfile.dev . -t php73-fpm:dev
-docker run -d -p 8080:8080 -it --name=php -v $(pwd)/var/www/html:/var/www/html php73-fpm:dev
+docker run -d -p 9000:9000 -it --name=php php73-fpm:dev
 ```
 
 ## Build to use as a production environment:
 ```
-docker build -f Dockerfile . -t php73
-docker run -d -p 8080:8080 -it --name=php -v $(pwd)/var/www/html:/var/www/html php73
+docker build -f Dockerfile . -t php73-fpm
+docker run -d -p 9000:9000 -it --name=php php73-fpm
 ```
 
 
