@@ -11,6 +11,7 @@ RUN apt-get upgrade && apt-get update && ACCEPT_EULA=Y && apt-get install -y \
     libzip-dev \
     libgeoip-dev \
     libxml2-dev \
+    libxslt-dev \
     libtidy-dev \
     libaio1 \
     apt-file \
@@ -30,7 +31,7 @@ RUN pecl channel-update pecl.php.net \
     && pecl install timezonedb
 
 # Install and activate extensions
-RUN docker-php-ext-install -j$(nproc) calendar iconv bcmath xml gd mbstring pdo tidy gettext intl pdo pdo_mysql mysqli simplexml tokenizer xml xmlwriter zip opcache exif \
+RUN docker-php-ext-install -j$(nproc) calendar iconv bcmath xml gd mbstring pdo tidy gettext intl pdo pdo_mysql mysqli simplexml tokenizer xml xsl xmlwriter zip opcache exif \
     && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
     && docker-php-ext-enable redis geoip apcu memcached timezonedb
 
