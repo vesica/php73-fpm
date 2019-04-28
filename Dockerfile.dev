@@ -1,4 +1,4 @@
-FROM vesica/php73-fpm
+FROM quay.io/vesica/php73-fpm
 
 # Make production ready
 RUN mv "$PHP_INI_DIR/php.ini-development" "$PHP_INI_DIR/php.ini"
