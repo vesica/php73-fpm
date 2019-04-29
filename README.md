@@ -39,7 +39,8 @@ docker run -d -p 9000:9000 -it --name=php php73-fpm
 
 
 ## Publish Images
-Docker images are automatically published to quay.io/vesica/php73-fpm:latest and quay.io/vesica/php73-fpm:dev.
+Run ```sh build.sh``` to update quay.io/vesica/php73-fpm:latest and vesica/php73-fpm:latest (https://hub.docker.com/r/vesica/php72/) as well as the version specified in that file.
+Running ```build.sh``` will also create quay.io/vesica/php73-fpm:dev and vesica/php73-fpm:dev on hub.docker.com which is basically the same image with XDebug.
 
 
 ## Important Information:
